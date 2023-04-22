@@ -14,8 +14,18 @@ import { AREA_CODES } from './consts.js';
  *   N11 - service codes
  *   N9X - expansion codes
  *   37X, 96X - set aside for future use
+ * 
+ * @param {string} override - if provided, will return this value if it's valid
+ * otherwise it'll throw an error
  */
-export const generateAreaCode = () =>  {
+export const generateAreaCode = (override) =>  {
+  if (override) {
+    if (validateAreaCode(override)) {
+      return override;
+    }
+    // if this package was really good, it would throw the exact reason it's invalid
+    throw new Error('Invalid area code');
+  }
   return AREA_CODES[Math.floor(Math.random() * AREA_CODES.length)];
 }
 
