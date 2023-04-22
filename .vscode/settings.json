@@ -5,6 +5,8 @@
     "jestconfig",
     "linebreak",
     "nanp",
+    "postversion",
+    "preversion",
     "tsbuildinfo"
   ],
     "editor.codeActionsOnSave": {

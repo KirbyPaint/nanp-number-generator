@@ -3,15 +3,26 @@
   "version": "0.0.3",
   "type": "module",
   "description": "A tool to generate only numbers that comply with the North American Numbering Plan",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "repository": "https://github.com/KirbyPaint/nanp-number-generator.git",
   "author": "Ash Porter <ashley.porter@eyecuelab.com>",
+  "keywords": [
+    "phone",
+    "number",
+    "nanp"
+  ],
   "license": "BSD-3-Clause",
   "private": false,
   "scripts": {
     "test": "jest --config jestconfig.json",
     "lint": "eslint src/**/*.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
