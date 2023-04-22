@@ -6,5 +6,5 @@ const areaCodeRegex = /^[2-9](\d)(?!\1)\d$/;
  * @returns true if valid according to NANP
  */
 export const validateAreaCode = (code: string) => {
-  return areaCodeRegex.test(code);
+	return areaCodeRegex.test(code);
 };

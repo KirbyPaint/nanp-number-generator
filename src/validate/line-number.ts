@@ -7,16 +7,16 @@
  * @returns true if valid according to NANP
  */
 export const validateLineNumber = (code: string) => {
-  const digits = code.split("");
-  // doesn't end with 0100-0199
-  if (
-    digits[1] === "0" &&
-    digits[2] === "1" &&
-    digits[3] >= "0" &&
-    digits[3] <= "9"
-  ) {
-    return false;
-  }
-  // if not false must be true ¯\_(ツ)_/¯
-  return true;
+	const digits = code.split(``);
+	// doesn't end with 0100-0199
+	if (
+		digits[1] === `0` &&
+    digits[2] === `1` &&
+    digits[3] >= `0` &&
+    digits[3] <= `9`
+	) {
+		return false;
+	}
+	// if not false must be true ¯\_(ツ)_/¯
+	return true;
 };

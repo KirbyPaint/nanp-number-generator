@@ -18,12 +18,12 @@ import { validateAreaCode } from "../validate/area-code";
  * otherwise it'll throw an error
  */
 export const generateAreaCode = (override?: string) => {
-  if (override) {
-    if (validateAreaCode(override)) {
-      return override;
-    }
-    // if this package was really good, it would throw the exact reason it's invalid
-    throw new Error("Invalid area code");
-  }
-  return AREA_CODES[Math.floor(Math.random() * AREA_CODES.length)].toString();
+	if (override) {
+		if (validateAreaCode(override)) {
+			return override;
+		}
+		// if this package was really good, it would throw the exact reason it's invalid
+		throw new Error(`Invalid area code`);
+	}
+	return AREA_CODES[Math.floor(Math.random() * AREA_CODES.length)].toString();
 };
