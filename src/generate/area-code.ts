@@ -1,5 +1,5 @@
-import { AREA_CODES } from "../consts.js";
-import { validateAreaCode } from "../validate/area-code.js";
+import { AREA_CODES } from "../consts";
+import { validateAreaCode } from "../validate/area-code";
 
 /**
  * Generates an area code valid for the NANP
@@ -25,5 +25,5 @@ export const generateAreaCode = (override?: string) => {
     // if this package was really good, it would throw the exact reason it's invalid
     throw new Error("Invalid area code");
   }
-  return AREA_CODES[Math.floor(Math.random() * AREA_CODES.length)];
+  return AREA_CODES[Math.floor(Math.random() * AREA_CODES.length)].toString();
 };
