@@ -1,0 +1,11 @@
+{
+  "name": "nanp-number-generator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A tool to generate only numbers that comply with the North American Numbering Plan",
+  "main": "src/index.js",
+  "repository": "https://github.com/KirbyPaint/nanp-number-generator.git",
+  "author": "Ash Porter <ashley.porter@eyecuelab.com>",
+  "license": "BSD 3-Clause License",
+  "private": false
+}
