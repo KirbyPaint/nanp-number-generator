@@ -1,4 +1,4 @@
-import { AREA_CODES } from "../consts";
+import { AREA_CODES } from "../consts.js";
 import { validateAreaCode } from "../validate/area-code.js";
 
 /**

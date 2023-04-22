@@ -16,9 +16,9 @@
       }
     }
   },
-  "main": "./lib/cjs/index.js",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "module": "./lib/esm/index.js",
-  "types": "./lib/cjs/types/index.d.ts",
   "type": "module",
   "description": "A tool to generate only numbers that comply with the North American Numbering Plan",
   "repository": "https://github.com/KirbyPaint/nanp-number-generator.git",
@@ -33,7 +33,7 @@
   "scripts": {
     "build:cjs": "tsc -p ./tsconfig.cjs.json",
     "build:esm": "tsc -p ./tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
-    "build": "yarn clean && yarn build:esm && yarn build:cjs",
+    "build": "tsc",
     "clean": "rm -rf ./lib",
     "prepack": "yarn build"
   },
