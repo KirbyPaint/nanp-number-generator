@@ -1,6 +1,6 @@
 {
   "name": "nanp-number-generator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "A tool to generate only numbers that comply with the North American Numbering Plan",
   "main": "lib/index.js",
@@ -21,7 +21,7 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
-    "version": "npm run format && git add -A src",
+    "version": "npm run lint --fix && git add -A src",
     "postversion": "git push && git push --tags"
   },
   "devDependencies": {
