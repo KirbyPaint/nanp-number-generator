@@ -1,6 +1,6 @@
 {
   "name": "nanp-number-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "A tool to generate only numbers that comply with the North American Numbering Plan",
   "main": "src/index.js",
