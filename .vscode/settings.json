@@ -5,9 +5,13 @@
     "jestconfig",
     "linebreak",
     "nanp",
+    "outfile",
     "postversion",
+    "predeploy",
     "preversion",
-    "tsbuildinfo"
+    "servedir",
+    "tsbuildinfo",
+    "tsup"
   ],
     "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
