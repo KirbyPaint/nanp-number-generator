@@ -1,8 +1,10 @@
 {
   "cSpell.words": [
+    "codepaths",
     "consts",
     "linebreak",
-    "nanp"
+    "nanp",
+    "tsbuildinfo"
   ],
     "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
