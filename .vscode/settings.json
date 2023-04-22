@@ -1,6 +1,14 @@
 {
   "cSpell.words": [
     "consts",
+    "linebreak",
     "nanp"
+  ],
+    "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"],
+  "eslint.workingDirectories": [
+    "./src",
   ]
 }
