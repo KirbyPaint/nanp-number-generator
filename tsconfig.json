@@ -1,21 +1,15 @@
 {
   "compilerOptions": {
-    "paths": {
-      "~/*": ["./src/*"]
-    },
-    "lib": ["ES2022", "dom"],
-    "module": "CommonJS",
-    "noEmit": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "jsx": "react-jsx",
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ES2020",
+    "outDir": "./lib/esm",
     "skipLibCheck": true,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "target": "ES2019",
-    "types": ["vite/client", "vitest/globals"]
-  }
+    "strict": true,
+    "target": "ES2015",
+  },
+  "include": [
+    "./src"
+  ]
 }
