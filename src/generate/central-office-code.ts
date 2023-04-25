@@ -5,6 +5,9 @@ import { validateCentralOfficeCode } from "../validate/central-office-code";
  * @returns a 3 digit string that:
  * - does not start with a 0 or a 1
  * - does not end with 11
+ * 
+ * @param {string} override - if provided, will return this value if it's valid
+ * otherwise it'll throw an error
  */
 export const generateCentralOfficeCode = (override?: string): string => {
 	if (override) {

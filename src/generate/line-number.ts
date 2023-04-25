@@ -6,6 +6,9 @@ import { validateLineNumber } from "../validate/line-number";
  * @returns a 4 digit string that:
  * - doesn't end between 0100-0199 UNLESS
  * - it's a 555 number (reserved for fictional numbers)
+ * 
+ * @param {string} override - if provided, will return this value if it's valid
+ * otherwise it'll throw an error
  */
 export const generateLineNumber = (override?: string, fictionalize?: boolean): string => {
 	if (override) {

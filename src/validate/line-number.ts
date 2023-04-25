@@ -8,8 +8,6 @@
  */
 export const validateLineNumber = (code: string) => {
 	if (code.length !== 4) {
-		// eslint-disable-next-line no-console
-		console.log(`${code} length is ${code.length}`);
 		return false;
 	}
 	const digits = code.split(``);
