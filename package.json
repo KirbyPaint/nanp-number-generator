@@ -19,7 +19,7 @@
   },
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
-  "module": "./lib/esm/index.js",
+  "module": "./lib/index.mjs",
   "type": "commonjs",
   "description": "A tool to generate only numbers that comply with the North American Numbering Plan",
   "repository": "https://github.com/KirbyPaint/nanp-number-generator.git",
