@@ -4,6 +4,9 @@
  * @returns true if valid according to NANP
  */
 export const validateCentralOfficeCode = (code: string) => {
+	if (code.length !== 3) {
+		return false;
+	}
 	const digits = code.split(``);
 	// doesn't start with 0 or 1
 	if (digits[0] === `0` || digits[0] === `1`) {
@@ -13,6 +16,6 @@ export const validateCentralOfficeCode = (code: string) => {
 	if (digits[1] === `1` && digits[2] === `1`) {
 		return false;
 	}
-	// if not false must be true ¯\_(ツ)_/¯
+	// if not false must be true
 	return true;
 };

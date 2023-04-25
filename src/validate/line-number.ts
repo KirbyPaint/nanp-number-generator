@@ -7,6 +7,11 @@
  * @returns true if valid according to NANP
  */
 export const validateLineNumber = (code: string) => {
+	if (code.length !== 4) {
+		// eslint-disable-next-line no-console
+		console.log(`${code} length is ${code.length}`);
+		return false;
+	}
 	const digits = code.split(``);
 	// doesn't end with 0100-0199
 	if (
@@ -17,6 +22,6 @@ export const validateLineNumber = (code: string) => {
 	) {
 		return false;
 	}
-	// if not false must be true ¯\_(ツ)_/¯
+	// if not false must be true
 	return true;
 };

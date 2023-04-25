@@ -1,3 +1,5 @@
+import { validateLineNumber } from "../validate/line-number";
+
 /**
  * Generates a line number valid for the NANP
  * @param {boolean} fictionalize - if true, will generate a 01XX number
@@ -5,7 +7,13 @@
  * - doesn't end between 0100-0199 UNLESS
  * - it's a 555 number (reserved for fictional numbers)
  */
-export const generateLineNumber = (fictionalize?: boolean): string => {
+export const generateLineNumber = (override?: string, fictionalize?: boolean): string => {
+	if (override) {
+		if (validateLineNumber(override)) {
+			return override;
+		}
+		throw new Error(`Invalid line number`);
+	}
 	// torn between if I want this as a true/false
 	// or if i just want it to be valid no matter what goes here
 	if (typeof fictionalize !== `undefined`) {

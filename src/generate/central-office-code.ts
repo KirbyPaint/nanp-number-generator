@@ -1,10 +1,18 @@
+import { validateCentralOfficeCode } from "../validate/central-office-code";
+
 /**
  * Generates a central office code valid for the NANP
  * @returns a 3 digit string that:
  * - does not start with a 0 or a 1
  * - does not end with 11
  */
-export const generateCentralOfficeCode = (): string => {
+export const generateCentralOfficeCode = (override?: string): string => {
+	if (override) {
+		if (validateCentralOfficeCode(override)) {
+			return override;
+		}
+		throw new Error(`Invalid central office code`);
+	}
 	const first = Math.floor(Math.random() * 8) + 2;
 	const second = Math.floor(Math.random() * 9);
 	const third = Math.floor(Math.random() * 9);

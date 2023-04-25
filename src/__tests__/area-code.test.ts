@@ -1,6 +1,7 @@
-import { generateAreaCode } from "../generate/area-code";
-
 import { describe, expect, it } from "vitest";
+
+import { generateAreaCode } from "../generate/area-code";
+import { validateAreaCode } from "../validate/area-code";
 
 const areaCodeRegex = /^[2-9](\d)(?!\1)\d$/;
 
@@ -23,3 +24,13 @@ describe(`Area Code`, () => {
 		}
 	});
 });
+
+describe(`Area Code Sanity Test`, () => {
+	it(`should generate a valid area code a lot of times with no errors`, async () => {
+		for (let i = 0; i < 1000; i++) {
+			const centralOfficeCode = await generateAreaCode();
+			expect(validateAreaCode(centralOfficeCode)).toBe(true);
+		}
+	});
+});
+

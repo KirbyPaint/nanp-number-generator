@@ -1,7 +1,7 @@
+import { describe, expect, it } from "vitest";
+
 import { generateCentralOfficeCode } from "../generate/central-office-code";
 import { validateCentralOfficeCode } from "../validate/central-office-code";
-
-import { describe, expect, it } from "vitest";
 
 // ERROR IN TEST ENV
 // Your random NANP number is:
@@ -13,16 +13,15 @@ import { describe, expect, it } from "vitest";
 describe(`Central Office Code`, () => {
 	it(`should generate a valid central office code`, async () => {
 		const centralOfficeCode = await generateCentralOfficeCode();
-		expect(validateCentralOfficeCode(centralOfficeCode.toString())).toBe(true);
-		// expect(areaCode).toMatch(areaCodeRegex);
+		expect(validateCentralOfficeCode(centralOfficeCode)).toBe(true);
 	});
 	it(`should allow a valid central office code to be passed in`, () => {
-		const areaCode = generateCentralOfficeCode();
-		expect(areaCode.length).toBe(3);
+		const areaCode = generateCentralOfficeCode(`737`);
+		expect(areaCode).toBe(`737`);
 	});
 	it(`should not allow an invalid central office code to be passed in`, () => {
 		try {
-			generateCentralOfficeCode();
+			generateCentralOfficeCode(`211`);
 		} catch (error) {
 			if (error instanceof Error) {
 				expect(error.message).toBe(`Invalid central office code`);
@@ -30,3 +29,13 @@ describe(`Central Office Code`, () => {
 		}
 	});
 });
+
+describe(`Central Office Code Sanity Test`, () => {
+	it(`should generate a valid central office code a lot of times with no errors`, async () => {
+		for (let i = 0; i < 1000; i++) {
+			const centralOfficeCode = await generateCentralOfficeCode();
+			expect(validateCentralOfficeCode(centralOfficeCode)).toBe(true);
+		}
+	});
+});
+
