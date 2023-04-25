@@ -32,10 +32,7 @@
   "license": "BSD-3-Clause",
   "private": false,
   "scripts": {
-    "build:cjs": "tsc -p ./tsconfig.cjs.json",
-    "build:esm": "tsc -p ./tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
-    "build:tsup": "tsup ./src/index.ts --format cjs,esm --dts --clean",
-    "build": "tsc",
+    "build": "tsup ./src/index.ts --format cjs,esm --dts --clean",
     "build:all": "yarn build:cjs && yarn build:esm",
     "clean": "rm -rf ./lib",
     "prepack": "yarn clean && yarn build:tsup",
@@ -43,22 +40,20 @@
     "test:once": "vitest run"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.4",
-    "@babel/preset-env": "^7.21.4",
-    "@babel/preset-typescript": "^7.21.4",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
     "eslint": "8.39.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
     "jsdom": "^21.1.1",
     "tsconfig-paths": "4.2.0",
     "tsup": "^6.7.0",
     "typescript": "5.0.4",
     "vitest": "^0.30.1"
   },
+  "homepage": "https://github.com/KirbyPaint/nanp-number-generator#readme",
   "lint-staged": {
     "*.ts{,x}": "yarn lint"
   },
-  "homepage": "https://github.com/KirbyPaint/nanp-number-generator#readme",
   "bugs": {
     "url": "https://github.com/KirbyPaint/nanp-number-generator/issues"
   }

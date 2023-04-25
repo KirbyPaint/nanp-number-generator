@@ -2,7 +2,6 @@
   "cSpell.words": [
     "codepaths",
     "consts",
-    "jestconfig",
     "linebreak",
     "nanp",
     "outfile",
@@ -14,7 +13,7 @@
     "tsup"
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll": true
   },
   "eslint.validate": ["javascript", "typescript"],
   "eslint.workingDirectories": [
