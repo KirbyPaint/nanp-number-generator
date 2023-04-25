@@ -1,7 +1,5 @@
 import { generateAreaCode } from "../generate/area-code";
 
-import { describe, expect, it } from "vitest";
-
 const areaCodeRegex = /^[2-9](\d)(?!\1)\d$/;
 
 describe(`Area Code`, () => {
