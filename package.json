@@ -29,7 +29,7 @@
     "number",
     "nanp"
   ],
-  "license": "BSD-3-Clause",
+  "license": "MIT",
   "private": false,
   "scripts": {
     "build": "tsup ./src/index.ts --format cjs,esm --dts --clean",
