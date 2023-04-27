@@ -8,17 +8,13 @@
  */
 export const validateLineNumber = (code: string) => {
 	if (code.length !== 4) {
-		return false;
+		throw new Error(`Line number must be 4 digits`);
 	}
-	const digits = code.split(``);
 	// doesn't end with 0100-0199
 	if (
-		digits[1] === `0` &&
-    digits[2] === `1` &&
-    digits[3] >= `0` &&
-    digits[3] <= `9`
+		code.startsWith(`01`)
 	) {
-		return false;
+		throw new Error(`Line number must not end in range 0100-0199`);
 	}
 	// if not false must be true
 	return true;
