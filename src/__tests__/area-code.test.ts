@@ -19,7 +19,16 @@ describe(`Area Code`, () => {
 			generateAreaCode(`911`);
 		} catch (error) {
 			if (error instanceof Error) {
-				expect(error.message).toBe(`Invalid area code`);
+				expect(error.message).toBe(`Area code must be a valid NANP area code`);
+			}
+		}
+	});
+	it(`should not allow an invalid area code to be passed in`, () => {
+		try {
+			generateAreaCode(`2`);
+		} catch (error) {
+			if (error instanceof Error) {
+				expect(error.message).toBe(`Area code must be 3 digits`);
 			}
 		}
 	});
