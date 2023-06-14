@@ -1,6 +1,6 @@
 {
   "name": "nanp-number-generator",
-  "version": "1.1.005",
+  "version": "1.2.01",
   "files": [
     "lib/**/*",
     "src/**/*"
