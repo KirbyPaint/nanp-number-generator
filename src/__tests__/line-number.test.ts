@@ -16,7 +16,18 @@ describe(`Line number`, () => {
 			generateLineNumber(`911`);
 		} catch (error) {
 			if (error instanceof Error) {
-				expect(error.message).toBe(`Invalid line number`);
+				expect(error.message).toBe(`Line number must be 4 digits`);
+			}
+		}
+	});
+	it(`should not allow an invalid line number to be passed in`, () => {
+		try {
+			generateLineNumber(`0145`);
+		} catch (error) {
+			if (error instanceof Error) {
+				expect(error.message).toBe(
+					`Line number must not end in range 0100-0199`
+				);
 			}
 		}
 	});
