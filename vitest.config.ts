@@ -14,7 +14,7 @@ export default defineConfig({
 			`**/{karma,rollup,webpack,vite,vitest,ava,babel,nyc,cypress,tsup,build}.config.*`,
 		],
 		coverage: {
-			reporter: [`json`],
+			reporter: [`html`],
 		},
 	},
 });
