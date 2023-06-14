@@ -1,6 +1,6 @@
 {
   "name": "nanp-number-generator",
-  "version": "1.1.0",
+  "version": "1.1.01",
   "files": [
     "lib/**/*",
     "src/**/*"
@@ -35,6 +35,7 @@
     "build": "tsup ./src/index.ts --format cjs,esm --dts --clean",
     "clean": "rm -rf ./lib",
     "prepack": "yarn clean && yarn build",
+    "publish": "npm publish --access public",
     "test": "vitest",
     "test:once": "vitest run",
     "test:coverage": "vitest run --coverage"
